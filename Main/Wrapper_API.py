@@ -25,6 +25,7 @@
 #           For internal Cisco gve-programmability@cisco.com
 #           For Cisco partners, open a case at www.cisco.com/go/ph
 
+# IP & ADMIN ONLY USED WHEN DCLOUD IS WORKING
 import requests
 
 host = '198.18.134.28:8080'

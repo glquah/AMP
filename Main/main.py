@@ -28,9 +28,8 @@
 
 import sys
 from Wrapper_API import  Wrapper_API
-#from Wrapper_API import Wrapper_API
 
-
+# NOT ABLE TO WORK IF DCLOUD IS NOT RUNNING
 def main():
     """
     Main method for our initializing our Wrapper API and calling functions
