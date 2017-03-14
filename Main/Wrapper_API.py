@@ -28,9 +28,12 @@
 # IP & ADMIN ONLY USED WHEN DCLOUD IS WORKING
 import requests
 
-host = '198.18.134.28:8080'
-username = 'admin'
-password = 'admin'
+#host = '198.18.134.28:8080'
+host = 'api.amp.sourcefire.com'
+username = 'badc2e9d062af26be4ad'
+password = 'ff7924e3-6e14-404e-b289-d5628b7de7ca'
+#username = 'admin'
+#password = 'admin'
 
 class Wrapper_API(object) :
     """
@@ -45,12 +48,23 @@ class Wrapper_API(object) :
         """
         Sends a request to the API for retrieving data.
         """
-        url = 'http://' + host + '/api' + '/' + phrase
-        headers = {'Content-Type': 'application/vnd.yang.data+json',
-                   'Accept': 'application/vnd.yang.data+json'}
+        url = 'http://' + host + '/v1' + '/' + phrase
+        headers = {'Content-Type': 'application/json',
+                   'Accept': 'application/json',
+                   'Accept-Encoding': 'application/gzip'
+                   }
         response = requests.get(url, auth=(username, password),
                                 headers=headers, verify=False)
         return response.text
+
+    def getComputers(self):
+        """
+        Retrieves a list of computers
+        """
+        computersURL = '/computers'
+        apiRequest = Wrapper_API()
+        apiResponse = apiRequest.send_api_request(computersURL)
+        return apiResponse
 
     def getDevices(self) :
         """
