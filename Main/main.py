@@ -27,6 +27,7 @@
 #           For Cisco partners, open a case at www.cisco.com/go/ph
 
 import sys
+import json
 from Wrapper_API import  Wrapper_API
 
 # NOT ABLE TO WORK IF DCLOUD IS NOT RUNNING
@@ -43,6 +44,8 @@ def main():
 
     #print(getSnmpConfig)
     getComputers = getWrapperAPI.getComputers()
+    with open('data.json', 'w') as outfile:
+        json.dump(getComputers, outfile)
     print(getComputers)
 
 if __name__ == '__main__':

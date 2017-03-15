@@ -29,9 +29,12 @@
 import requests
 
 #host = '198.18.134.28:8080'
-host = 'api.amp.sourcefire.com'
-username = 'badc2e9d062af26be4ad'
-password = 'ff7924e3-6e14-404e-b289-d5628b7de7ca'
+host = 'api.apjc.amp.cisco.com'
+username = '8a2a49f003566ed3fb0b'
+password = '5d97572a-675f-40b6-a98c-2ba67b8e2c92'
+
+#username = 'badc2e9d062af26be4ad'
+#password = 'ff7924e3-6e14-404e-b289-d5628b7de7ca'
 #username = 'admin'
 #password = 'admin'
 
