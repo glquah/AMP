@@ -35,14 +35,15 @@ def main():
     Main method for our initializing our Wrapper API and calling functions
     """
     getWrapperAPI = Wrapper_API()
-    getDevices = getWrapperAPI.getDevices()
-    print(getDevices)
-    getTopology = getWrapperAPI.getTopology()
-    print(getTopology)
-    getSnmpConfig = getWrapperAPI.getSnmpConfig()
+    #getDevices = getWrapperAPI.getDevices()
+    #print(getDevices)
+    #getTopology = getWrapperAPI.getTopology()
+    #print(getTopology)
+    #getSnmpConfig = getWrapperAPI.getSnmpConfig()
 
-    print(getSnmpConfig)
-
+    #print(getSnmpConfig)
+    getComputers = getWrapperAPI.getComputers()
+    print(getComputers)
 
 if __name__ == '__main__':
     sys.exit(main())
