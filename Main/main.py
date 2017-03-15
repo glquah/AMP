@@ -43,10 +43,13 @@ def main():
     #getSnmpConfig = getWrapperAPI.getSnmpConfig()
 
     #print(getSnmpConfig)
-    getComputers = getWrapperAPI.getComputers()
-    with open('data.json', 'w') as outfile:
-        json.dump(getComputers, outfile)
-    print(getComputers)
+    getComputersStr = getWrapperAPI.getComputers()
+    getComputersJson = json.loads(getComputersStr)
+    with open('data.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersJson, outfile, skipkeys=True, ensure_ascii=True, separators=(',',':'))
+
+    print(getComputersJson)
+
 
 if __name__ == '__main__':
     sys.exit(main())
