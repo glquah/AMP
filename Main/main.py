@@ -36,6 +36,7 @@ def main():
     Main method for our initializing our Wrapper API and calling functions
     """
     getWrapperAPI = Wrapper_API()
+
     #getDevices = getWrapperAPI.getDevices()
     #print(getDevices)
     #getTopology = getWrapperAPI.getTopology()
@@ -43,12 +44,19 @@ def main():
     #getSnmpConfig = getWrapperAPI.getSnmpConfig()
 
     #print(getSnmpConfig)
+
+
     getComputersStr = getWrapperAPI.getComputers()
     getComputersJson = json.loads(getComputersStr)
-    with open('data.json', 'w', encoding='utf-8') as outfile:
-        json.dump(getComputersJson, outfile, skipkeys=True, ensure_ascii=True, separators=(',',':'))
-
+    with open('getComputers.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
     print(getComputersJson)
+
+    getEvent1Str = getWrapperAPI.getEvent1()
+    getEvent1Json = json.loads(getEvent1Str)
+    with open('getEvent1.json', 'w', encoding='utf-8') as outfile:
+        json.dump(getComputersJson, outfile, skipkeys=True, indent=2, ensure_ascii=True, separators=(',',':'))
+    print(getEvent1Json)
 
 
 if __name__ == '__main__':
